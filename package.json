@@ -1,0 +1,20 @@
+{
+  "name": "chatroom",
+  "version": "1.0.0",
+  "description": "Chatroom example using socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.9"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "http": "0.0.0",
+    "socket.io": "^1.4.6",
+    "socket.io-client": "^1.4.6"
+  }
+}
