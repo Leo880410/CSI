@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Socket.io example</title>
-		<script src="/static/socket.io.js"></script>
-	</head>
-	<body>
-		<h1>Hi, 我是Kelly喔！</h1>
-		<div>
-			<span>name:</span>
-			<input id="username" type="text">
-			<input id="join" type="button" value="Join">
-		</div>
-		<div>
-			<span>input:</span>
-			<input id="message" type="text">
-			<input id="send" type="button" value="Send">
-			<div id="messages"></div>
-		</div>
-		<script>
-			var socket = null;
-			join.onclick = function () {
-			socket = io.connect('localhost:8002');
-			socket.emit('join', {user: username.value});
-			console.log('user:' + username.value);
-			socket.on('message', function(data) {
-				messages.innerHTML = "";
-				data.messages.forEach( function(element, index) {
-					messages.innerHTML += element + "<br>";
-				});
-				console.log(data);
-			})
-			send.onclick =function () {
-				socket.emit('send', {message: message.value});
-			}
-			}
-		</script>
-	</body>
+<html lang="en" ng-app="chat">
+<head>
+    <meta charset="UTF-8">
+    <title>Socket.io example</title>
+</head>
+<body>
+<h1>Hi, 我是Kelly喔！</h1>
+<div>
+    <span>name:</span>
+    <input id="username" type="text">
+    <input id="join" type="button" value="Join">
+</div>
+<div>
+    <span>input:</span>
+    <input id="message" type="text">
+    <input id="send" type="button" value="Send">
+    <div id="messages"></div>
+</div>
+<div ui-view></div>
+
+<!-- socket -->
+<script src="/static/socket.io.js"></script>
+
+<script src="/lib/angular/angular.min.js"></script>
+<script src="/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/chat/chat.js"></script>
+<script src="/chat/views/guest.controller.js"></script>
+<script src="/chat/views/service.controller.js"></script>
+<script>
+    var socket = null;
+    join.onclick = function () {
+        socket = io.connect('localhost:8002');
+        socket.emit('join', {user: username.value});
+        console.log('user:' + username.value);
+        socket.on('message', function (data) {
+            messages.innerHTML = "";
+            data.messages.forEach(function (element, index) {
+                messages.innerHTML += element + "<br>";
+            });
+            console.log(data);
+        });
+        send.onclick = function () {
+            socket.emit('send', {message: message.value});
+        }
+    }
+</script>
+</body>
 </html>

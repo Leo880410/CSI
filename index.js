@@ -51,6 +51,7 @@ var messages = [];
 server.listen(8002);
 app.use('/static', express.static(__dirname + '/node_modules/socket.io-client'));
 app.use(express.static(__dirname + '/static'));
+
 app.get('/users', function(request, response) {
    response.send(users);
     users.forEach(function(element){
