@@ -1,12 +1,15 @@
 (function () {
-    angular.module('chat', ['ui.router']).config(config);
+    angular.module('chat', [
+        'ui.router'
+       // 'angular-storage'
+    ]).config(config);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: '/chat/views/home.html',
+                templateUrl: '/chat/views/home.html'
             })
             .state('guest', {
                 url: '/guest',

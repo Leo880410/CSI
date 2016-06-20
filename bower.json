@@ -19,6 +19,7 @@
   "dependencies": {
     "angular": "~1.5.6",
     "angular-ui-router": "~0.3.1",
-    "reset-css": "~2.0.2011012603"
+    "reset-css": "~2.0.2011012603",
+    "a0-angular-storage": "~0.0.15"
   }
 }
