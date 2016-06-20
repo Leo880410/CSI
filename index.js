@@ -93,6 +93,7 @@ function handleConnection(socket) {
 
     function handleDisconnect() {
         removeUser(socket.id);
+        sendMessages();
     }
 
     function sendMessages() {
