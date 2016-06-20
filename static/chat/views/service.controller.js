@@ -8,7 +8,7 @@
         activate();
         function activate() {
             var socket = null;
-            socket = io.connect('localhost:8002');
+            socket = io.connect('54.148.46.112:8002');
             console.log('ServiceCtrl loaded.');
             var table = document.getElementById("myTable");
             socket.on('message', function (data) {

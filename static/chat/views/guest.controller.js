@@ -10,7 +10,7 @@
         function activate() {
             console.log('GuestCtrl loaded.');
             var socket = null;
-            socket = io.connect('localhost:8002');
+            socket = io.connect('54.148.46.112:8002');
             console.log("hi");
             join.onclick = function () {
                 socket.emit('join', {user: username.value});
