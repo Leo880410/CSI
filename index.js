@@ -110,8 +110,8 @@ function createUser(id, name) {
         name: name,
         timestamp: new Date(),
         state: 'normal',
-        longitude: getRandomInRange(-180, 180, 5),
-        latitude: getRandomInRange(-180, 180, 5)
+        longitude: getRandomInRange(121, 122, 6),
+        latitude: getRandomInRange(23, 24, 6)
     }
 }
 
